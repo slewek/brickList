@@ -3,7 +3,9 @@ package com.example.lwm.bricklist
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_add_project.*
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -20,6 +22,7 @@ class AddProjectActivity : AppCompatActivity() {
 
         val extras = intent.extras ?: return
         adress = extras.getString("adress")
+
     }
 
     fun addClick(v: View) {
@@ -65,5 +68,6 @@ class AddProjectActivity : AppCompatActivity() {
         })
         thread.start()
         thread.interrupt()
+        finish()
     }
 }
